@@ -29,6 +29,7 @@ RUN yum install -y libedit libtool which
 # メモリやプロセスの状態変化はRUNをまたげないので&&でつなぐ必要がある
 RUN service mysql start && /install-q4m.sh && /install-handlersocket.sh
 ADD ./my.cnf /etc/my.cnf
+#RUN service mysql start && cat /usr/local/mysql/var/df1704c4368e.err
 
 EXPOSE 3306
-CMD ["service mysql start"]
+CMD ["service", "mysql", "start"]
