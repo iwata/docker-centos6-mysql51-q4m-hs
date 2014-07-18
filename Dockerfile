@@ -29,7 +29,8 @@ RUN yum install -y libedit libtool which
 # メモリやプロセスの状態変化はRUNをまたげないので&&でつなぐ必要がある
 RUN service mysql start && /install-q4m.sh && /install-handlersocket.sh
 ADD ./my.cnf /etc/my.cnf
-#RUN service mysql start && cat /usr/local/mysql/var/df1704c4368e.err
+
+RUN service mysql restart && $MYSQLDIR/bin/mysql -u root -h localhost --port 3306 -e "grant all privileges on *.* to root@'%';"
 
 EXPOSE 3306
 CMD ["service", "mysql", "start"]
