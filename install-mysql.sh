@@ -15,7 +15,6 @@ cd mysql-$MYVER
     --enable-thread-safe-client \
     --enable-local-infile \
     --enable-shared \
-    --with-partition \
     --with-charset=utf8 \
     --with-zlib-dir=bundled \
     --with-big-tables \

@@ -33,4 +33,4 @@ ADD ./my.cnf /etc/my.cnf
 RUN service mysql restart && $MYSQLDIR/bin/mysql -u root -h localhost --port 3306 -e "grant all privileges on *.* to root@'%';"
 
 EXPOSE 3306
-CMD ["/usr/local/mysql/bin/mysqld_safe"]
+CMD ["/usr/local/mysql/bin/mysqld_safe", "--user=mysql"]
