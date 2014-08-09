@@ -25,7 +25,7 @@ Done!
 Environment variables
 ---------------------
 
-`MYVER`: Set a specific MySQL version. (default 5.1.73)
-`Q4MVER`: Set a specific Q4M version. (default 0.9.13)
-`HSVER`: Set a specific HandleSocket version. (default 1.1.1)
-`MYSQLDIR`: Set a specific path for MySQL installation directory. (default '/usr/local/mysql')
+* `MYVER`: Set a specific MySQL version. (default 5.1.73)
+* `Q4MVER`: Set a specific Q4M version. (default 0.9.13)
+* `HSVER`: Set a specific HandleSocket version. (default 1.1.1)
+* `MYSQLDIR`: Set a specific path for MySQL installation directory. (default '/usr/local/mysql')
