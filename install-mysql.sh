@@ -4,10 +4,8 @@ set -xe
 groupadd mysql
 useradd -g mysql mysql
 
-cd /tmp
 echo -e "\e[1;32mStarting MySQL5.1 installation.\e[m"
-tar zxf mysql-$MYVER.tar.gz
-cd mysql-$MYVER
+cd /tmp/mysql-$MYVER
 
 ./configure \
     --prefix=$MYSQLDIR \
