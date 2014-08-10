@@ -29,3 +29,4 @@ Environment variables
 * `Q4MVER`: Set a specific Q4M version. (default 0.9.13)
 * `HSVER`: Set a specific HandleSocket version. (default 1.1.1)
 * `MYSQLDIR`: Set a specific path for MySQL installation directory. (default '/usr/local/mysql')
+* `TZ`: Set a specific TimeZone. (default Asia/Tokyo)
