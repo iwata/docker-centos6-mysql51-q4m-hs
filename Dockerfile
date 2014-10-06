@@ -21,9 +21,9 @@ RUN cd /tmp && wget https://github.com/DeNA/HandlerSocket-Plugin-for-MySQL/archi
 # to compile MySQL
 RUN yum install -y gcc gcc-c++ ncurses-devel && yum -y clean all
 
-ADD ./install-mysql.sh /install-mysql.sh
-ADD ./install-q4m.sh /install-q4m.sh
-ADD ./install-handlersocket.sh /install-handlersocket.sh
+COPY ./install-mysql.sh /install-mysql.sh
+COPY ./install-q4m.sh /install-q4m.sh
+COPY ./install-handlersocket.sh /install-handlersocket.sh
 RUN chmod +x /*.sh
 
 RUN /install-mysql.sh
@@ -34,7 +34,7 @@ RUN yum install -y libedit libtool which && yum -y clean all
 # メモリやプロセスの状態変化はRUNをまたげないので&&でつなぐ必要がある
 RUN service mysql start && /install-q4m.sh && /install-handlersocket.sh && mysql -u root -h localhost --port 3306 -e "grant all privileges on *.* to root@'%';"
 
-ADD ./my.cnf /etc/my.cnf
+COPY ./my.cnf /etc/my.cnf
 
 ENV LANG en_US.UTF-8
 EXPOSE 3306
